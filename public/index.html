@@ -1,58 +1,156 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07080b" />
     <title>Desk</title>
     <style>
       :root {
         color-scheme: dark;
         font-family: "Segoe UI", system-ui, sans-serif;
+        background: #07080b;
+        color: #f3f4f6;
       }
+      * { box-sizing: border-box; }
       body {
         margin: 0;
-        min-height: 100vh;
-        background: #0c0c0c;
-        color: #f4f4f4;
-        display: grid;
-        place-items: center;
+        background: #07080b;
+        color: #f3f4f6;
       }
       main {
-        width: min(40rem, calc(100% - 2.5rem));
-        padding: 3rem 0 4rem;
+        width: min(28rem, 100%);
+        margin: 0 auto;
+        padding: 0.85rem 1rem 2rem;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-bottom: 0.85rem;
       }
       h1 {
-        font-size: 1.75rem;
-        font-weight: 650;
+        margin: 0;
+        font-size: 1.35rem;
         letter-spacing: -0.03em;
-        margin: 0 0 0.75rem;
       }
-      p {
+      .pill {
+        border: 1px solid #3a3324;
+        background: #231e14;
+        color: #e6b35a;
+        border-radius: 999px;
+        padding: 0.2rem 0.6rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+      }
+      .lede {
         margin: 0 0 0.9rem;
-        line-height: 1.5;
-        color: #c8c8c8;
+        color: #c5c8d0;
+        line-height: 1.45;
       }
-      ul {
-        margin: 0.2rem 0 1rem;
-        padding-left: 1.1rem;
-        color: #c8c8c8;
-        line-height: 1.5;
+      .card {
+        background: #12141a;
+        border: 1px solid #262a33;
+        border-radius: 0.9rem;
+        padding: 0.85rem 0.9rem 0.95rem;
+        margin: 0 0 0.7rem;
       }
-      code {
-        color: #f4f4f4;
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.75rem;
+      }
+      .sym { color: #9aa0ab; font-size: 0.85rem; }
+      .mid {
+        font-size: 2.4rem;
+        font-weight: 650;
+        letter-spacing: -0.04em;
+        margin: 0.15rem 0 0.2rem;
+      }
+      .up { color: #3dd68c; }
+      .muted { color: #9aa0ab; }
+      .book {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.45rem;
+        margin-top: 0.7rem;
+      }
+      .book div, .stat {
+        background: #0c0e13;
+        border-radius: 0.65rem;
+        padding: 0.5rem 0.6rem;
+      }
+      .k {
+        display: block;
+        color: #8b919c;
+        font-size: 0.72rem;
+        margin-bottom: 0.15rem;
+      }
+      .v { font-variant-numeric: tabular-nums; }
+      svg { width: 100%; height: 4.2rem; display: block; margin-top: 0.7rem; }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.45rem;
+        margin: 0 0 0.7rem;
+      }
+      .stat b { font-weight: 600; }
+      ul { margin: 0.35rem 0 0; padding-left: 1.05rem; color: #c5c8d0; }
+      li { margin: 0.28rem 0; }
+      .hold {
+        margin: 0.7rem 0 0;
+        color: #e6b35a;
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>Desk</h1>
-      <p>Paper trading only. This site does not place an order.</p>
-      <ul>
-        <li>Shadow mode labels a decision and does not fill.</li>
-        <li>Paper mode fills only against the paper broker.</li>
-        <li>Risk vetoes stay in code. The page cannot turn them off.</li>
-      </ul>
-      <p>The Jev key stays on the judge. This host does not have it.</p>
+      <header>
+        <h1>Desk</h1>
+        <span class="pill">PAPER</span>
+      </header>
+      <p class="lede">ডেস্ক খোলা আছে। Paper trading only. এই পেজ কোনো লাইভ অর্ডার পাঠায় না।</p>
+
+      <section class="card" aria-label="ETH-USD">
+        <div class="row">
+          <span class="sym">ETH-USD</span>
+          <span class="sym">flat</span>
+        </div>
+        <div class="mid">102.45</div>
+        <div class="up">+1.97% long window</div>
+        <svg viewBox="0 0 300 64" role="img" aria-label="Price before the decision">
+          <polyline fill="none" stroke="#3dd68c" stroke-width="2" points="0.0,58.0 6.1,56.9 12.2,55.9 18.4,54.8 24.5,53.8 30.6,52.7 36.7,51.6 42.9,50.6 49.0,49.5 55.1,48.4 61.2,47.4 67.3,46.3 73.5,45.3 79.6,44.2 85.7,43.1 91.8,42.1 98.0,41.0 104.1,40.0 110.2,38.9 116.3,37.8 122.4,36.8 128.6,35.7 134.7,34.7 140.8,33.6 146.9,32.5 153.1,31.5 159.2,30.4 165.3,29.3 171.4,28.3 177.6,27.2 183.7,26.2 189.8,25.1 195.9,24.0 202.0,23.0 208.2,21.9 214.3,20.9 220.4,19.8 226.5,18.7 232.7,17.7 238.8,16.6 244.9,15.6 251.0,14.5 257.1,13.4 263.3,12.4 269.4,11.3 275.5,10.2 281.6,9.2 287.8,8.1 293.9,7.1 300.0,6.0" />
+        </svg>
+        <div class="book">
+          <div><span class="k">Bid</span><span class="v">102.44</span></div>
+          <div><span class="k">Ask</span><span class="v">102.46</span></div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Snapshot">
+        <div class="stat"><span class="k">Spread</span><b class="v">1.95 bps</b></div>
+        <div class="stat"><span class="k">Imbalance</span><b class="v">+0.45</b></div>
+        <div class="stat"><span class="k">Short</span><b class="v up">+0.24%</b></div>
+        <div class="stat"><span class="k">Medium</span><b class="v up">+0.73%</b></div>
+        <div class="stat"><span class="k">Inventory</span><b class="v">0</b></div>
+        <div class="stat"><span class="k">Drawdown</span><b class="v">0</b></div>
+      </section>
+
+      <section class="card">
+        <div class="row"><b>Paper book</b><span class="muted">one position</span></div>
+        <ul>
+          <li>Cash 100,000. No open name.</li>
+          <li>Shadow labels a decision and does not fill.</li>
+          <li>Paper fills only against this book, and only off this page.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="row"><b>Gambler · House · Spy</b><span class="muted">hold</span></div>
+        <p class="hold">The Jev key stays on the judge. This host does not have it, so the page holds.</p>
+      </section>
     </main>
   </body>
 </html>
