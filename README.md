@@ -31,7 +31,7 @@ If a judge call has not returned before the next block, the decision is a hold. 
 
 ## Site
 
-`https://mybot-tkwj.vercel.app` returned Vercel’s `NOT_FOUND` page because that deployment had no file for `/`. `public/index.html` is the page for `/`, and `vercel.json` publishes the `public` directory. The page is static. It does not start the desk and it does not place an order. The live hostname picks this up when that Vercel project is deployed again.
+`https://mybot-tkwj.vercel.app` serves `public/index.html`. The page is the paper desk for the example ETH-USD tape: mid, bid, ask, and the snapshot fields. It does not start the desk, hold the Jev key, or place an order. A missing file for `/` is what produced the earlier `NOT_FOUND` page.
 
 ## Run
 
