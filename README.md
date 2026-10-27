@@ -29,6 +29,10 @@ The pinned model is `jev-1.14.0`. Each answer log stores the `model` string from
 
 If a judge call has not returned before the next block, the decision is a hold. Rate limits back off inside the judge. A malformed question is not retried.
 
+## Site
+
+`https://mybot-tkwj.vercel.app` returned Vercel’s `NOT_FOUND` page because that deployment had no file for `/`. `public/index.html` is the page for `/`, and `vercel.json` publishes the `public` directory. The page is static. It does not start the desk and it does not place an order. The live hostname picks this up when that Vercel project is deployed again.
+
 ## Run
 
 Use two shells so the Jev key is not in the desk's environment.
